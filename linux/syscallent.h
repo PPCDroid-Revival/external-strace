@@ -243,7 +243,9 @@
 	{ 4,	TF,	sys_sendfile,		"sendfile"	}, /* 187 */
 	{ 5,	0,	sys_getpmsg,		"getpmsg"	}, /* 188 */
 	{ 5,	0,	sys_putpmsg,		"putpmsg"	}, /* 189 */
+#ifndef __mips
 	{ 0,	TP,	sys_vfork,		"vfork", SYS_vfork }, /* 190 */
+#endif
 	{ 2,	0,	sys_getrlimit,		"getrlimit"	}, /* 191 */
 	{ 6,	0,	sys_mmap,		"mmap2"		}, /* 192 */
 	{ 3,	TF,	sys_truncate64,		"truncate64"	}, /* 193 */
@@ -354,9 +356,10 @@
 	{ 5,	0,	printargs,		"SYS_297"	}, /* 297 */
 	{ 5,	0,	printargs,		"SYS_298"	}, /* 298 */
 	{ 5,	0,	printargs,		"SYS_299"	}, /* 299 */
-
+#ifndef __mips__
 #if SYS_socket_subcall != 300
  #error fix me
+#endif
 #endif
 	{ 8,	0,	printargs,		"socket_subcall"}, /* 300 */
 	{ 3,	TN,	sys_socket,		"socket"	}, /* 301 */
@@ -367,18 +370,22 @@
 	{ 3,	TN,	sys_getsockname,	"getsockname"	}, /* 306 */
 	{ 3,	TN,	sys_getpeername,	"getpeername"	}, /* 307 */
 	{ 4,	TN,	sys_socketpair,		"socketpair"	}, /* 308 */
+#ifndef __mips__
 	{ 4,	TN,	sys_send,		"send", SYS_sub_send }, /* 309 */
 	{ 4,	TN,	sys_recv,		"recv", SYS_sub_recv }, /* 310 */
 	{ 6,	TN,	sys_sendto,		"sendto", SYS_sub_sendto }, /* 311 */
 	{ 6,	TN,	sys_recvfrom,		"recvfrom", SYS_sub_recvfrom }, /* 312 */
+#endif
 	{ 2,	TN,	sys_shutdown,		"shutdown"	}, /* 313 */
 	{ 5,	TN,	sys_setsockopt,		"setsockopt"	}, /* 314 */
 	{ 5,	TN,	sys_getsockopt,		"getsockopt"	}, /* 315 */
 	{ 5,	TN,	sys_sendmsg,		"sendmsg"	}, /* 316 */
 	{ 5,	TN,	sys_recvmsg,		"recvmsg"	}, /* 317 */
 
+#ifndef __mips
 #if SYS_ipc_subcall != 318
  #error fix me
+#endif
 #endif
 	{ 4,	0,	printargs,		"ipc_subcall"	}, /* 318 */
 	{ 4,	TI,	sys_semop,		"semop"		}, /* 319 */

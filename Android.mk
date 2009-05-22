@@ -34,6 +34,8 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 
 LOCAL_MODULE_TAGS := debug
 
+ifneq ($(TARGET_ARCH),mips)
 include $(BUILD_EXECUTABLE)
+endif
 
 endif  # TARGET_SIMULATOR != true
