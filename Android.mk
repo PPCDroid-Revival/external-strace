@@ -19,6 +19,7 @@ LOCAL_SHARED_LIBRARIES :=
 
 LOCAL_C_INCLUDES := \
 	$(KERNEL_HEADERS) \
+	$(LOCAL_PATH)/strace/linux/$(TARGET_ARCH) \
 	$(LOCAL_PATH)/linux \
 	$(LOCAL_PATH)/android/arch/$(TARGET_ARCH)
 
@@ -34,8 +35,6 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 
 LOCAL_MODULE_TAGS := debug
 
-ifneq ($(TARGET_ARCH),mips)
 include $(BUILD_EXECUTABLE)
-endif
 
 endif  # TARGET_SIMULATOR != true
